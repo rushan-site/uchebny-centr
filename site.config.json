@@ -1,0 +1,48 @@
+{
+  "draftMode": true,
+  "siteUrl": "https://example.ru",
+  "brand": {
+    "name": "Учебный центр",
+    "fullName": "",
+    "tagline": "Профессиональное обучение и переподготовка",
+    "logoImage": ""
+  },
+  "contacts": {
+    "region": "Республика Башкортостан",
+    "city": "Янаул",
+    "street": "ул. Уфимская, 1А",
+    "postalCode": "",
+    "phones": [
+      { "display": "+7 (961) 370-28-56", "tel": "+79613702856" },
+      { "display": "+7 (987) 473-36-35", "tel": "+79874733635" }
+    ],
+    "email": "",
+    "workHours": "",
+    "geo": { "lat": null, "lon": null }
+  },
+  "messengers": {
+    "whatsapp": "",
+    "telegram": "",
+    "max": ""
+  },
+  "facts": {
+    "distanceLearning": "",
+    "learningFormats": "",
+    "documentsSummary": "",
+    "priceInfo": "Стоимость зависит от программы и формата обучения. Точную сумму назовём при консультации — по телефону или после заявки."
+  },
+  "legal": {
+    "organizationName": "",
+    "inn": "",
+    "ogrn": "",
+    "legalAddress": "",
+    "license": "",
+    "director": ""
+  },
+  "forms": {
+    "endpoint": "/api/lead"
+  },
+  "analytics": {
+    "yandexMetrikaId": ""
+  }
+}

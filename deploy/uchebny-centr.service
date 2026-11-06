@@ -1,0 +1,17 @@
+# systemd-сервис: автозапуск сайта на VPS.
+# Скопируйте в /etc/systemd/system/, поправьте пути и выполните:
+#   systemctl daemon-reload && systemctl enable --now uchebny-centr
+[Unit]
+Description=Сайт учебного центра
+After=network.target
+
+[Service]
+WorkingDirectory=/var/www/uchebny-centr
+ExecStart=/usr/bin/node server/server.mjs
+Restart=always
+Environment=NODE_ENV=production
+Environment=TRUST_PROXY=1
+User=www-data
+
+[Install]
+WantedBy=multi-user.target

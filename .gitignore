@@ -1,0 +1,8 @@
+node_modules
+dist/
+.cache-img/
+.env
+data/
+php/api/data/*.jsonl
+php/api/data/rate.json
+php/api/config.local.php

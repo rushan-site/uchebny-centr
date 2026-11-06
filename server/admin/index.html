@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Админ-панель сайта</title>
+<style>
+  :root { --ink:#0f141c; --muted:#677185; --line:#e2e6ee; --soft:#f3f5f9; --accent:#f5a524; --navy:#0c1d3c; --err:#c63a26; --ok:#1f9d62; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:var(--soft); }
+  header { background:var(--navy); color:#fff; padding:14px 24px; display:flex; align-items:center; gap:20px; position:sticky; top:0; z-index:5; flex-wrap:wrap; }
+  header h1 { font-size:17px; margin:0; }
+  header a { color:var(--accent); }
+  nav { display:flex; gap:4px; flex-wrap:wrap; }
+  nav button { background:transparent; color:#cfd6e4; border:0; padding:8px 14px; border-radius:9px; font:inherit; cursor:pointer; }
+  nav button.active, nav button:hover { background:rgba(255,255,255,.12); color:#fff; }
+  main { max-width:1100px; margin:24px auto; padding:0 20px 80px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px; margin-bottom:14px; }
+  .toolbar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:16px; }
+  .toolbar input, .toolbar select { padding:9px 12px; border:1px solid var(--line); border-radius:9px; font:inherit; min-width:220px; }
+  button.btn { border:0; border-radius:10px; padding:10px 18px; font:inherit; font-weight:600; cursor:pointer; background:var(--ink); color:#fff; }
+  button.btn.accent { background:var(--accent); color:#1d1303; }
+  button.btn.light { background:#fff; color:var(--ink); border:1px solid var(--line); }
+  button.btn.small { padding:5px 10px; font-size:13px; }
+  button.btn.danger { background:#fff; color:var(--err); border:1px solid #f0c9c2; }
+  .savebar { position:sticky; bottom:0; background:rgba(243,245,249,.95); backdrop-filter:blur(6px); padding:14px 0; display:flex; gap:12px; align-items:center; border-top:1px solid var(--line); margin-top:20px; }
+  details.item { background:#fff; border:1px solid var(--line); border-radius:12px; margin-bottom:10px; }
+  details.item > summary { padding:12px 16px; cursor:pointer; font-weight:600; display:flex; gap:10px; align-items:center; }
+  details.item > summary .tag { font-size:12px; font-weight:500; color:var(--muted); background:var(--soft); border-radius:6px; padding:2px 8px; }
+  details.item > summary .sp { flex:1; }
+  .item-body { padding:4px 16px 16px; }
+  .field { display:grid; grid-template-columns:220px 1fr; gap:12px; padding:8px 0; border-bottom:1px dashed var(--line); align-items:start; }
+  .field > label { font-weight:600; font-size:14px; padding-top:8px; }
+  .field > label small { display:block; font-weight:400; color:var(--muted); }
+  .field input[type=text], .field textarea, .field select, .field input[type=number] { width:100%; padding:9px 12px; border:1px solid var(--line); border-radius:9px; font:inherit; }
+  .field textarea { min-height:80px; resize:vertical; }
+  fieldset { border:1px solid var(--line); border-radius:12px; padding:8px 16px 12px; margin:10px 0; }
+  legend { font-weight:700; padding:0 6px; }
+  .row-actions { display:flex; gap:6px; }
+  .output { white-space:pre-wrap; font:12.5px/1.5 ui-monospace,Consolas,monospace; background:#0f141c; color:#d7dde8; padding:14px; border-radius:10px; max-height:300px; overflow:auto; }
+  .msg { padding:12px 14px; border-radius:10px; margin:10px 0; }
+  .msg.err { background:#fdecea; color:#8e2416; } .msg.ok { background:#e6f6ee; color:#135b39; } .msg.warn { background:#fff4e0; color:#7a4800; }
+  table { width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; }
+  th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; font-size:14px; }
+  th { background:var(--soft); font-size:12.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); }
+  .st-delivered { color:var(--ok); font-weight:600; } .st-failed, .st-not_configured { color:var(--err); font-weight:600; }
+  .upload { display:flex; gap:8px; align-items:center; }
+  .upload input[type=text] { flex:1; }
+  .help { color:var(--muted); font-size:14px; margin:0 0 14px; }
+  @media (max-width:720px) { .field { grid-template-columns:1fr; gap:4px; } .field > label { padding-top:0; } table { display:block; overflow-x:auto; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Админ-панель</h1>
+  <nav id="tabs"></nav>
+  <span style="flex:1"></span>
+  <a href="/" target="_blank">Открыть сайт ↗</a>
+</header>
+<main id="app"><p>Загрузка…</p></main>
+<script src="/admin/admin.js"></script>
+</body>
+</html>
